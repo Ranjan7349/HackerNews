@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch,Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Stories from './components/Stories.component';
+// import withFilter from './HOC/WithFilterHOC.component'
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h3>HackerNews LIVE</h3>
       </header>
+      <Switch>
+        <Route path="/" component={Stories} exact/>
+        <Route path="/top" component={Stories} />
+        <Route path="/ask" component={Stories} />
+        <Route path="/show" component={Stories} />
+        <Route path="/job" component={Stories} />
+      </Switch>
     </div>
   );
 }
