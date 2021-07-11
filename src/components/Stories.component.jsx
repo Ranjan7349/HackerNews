@@ -14,7 +14,6 @@ class Stories extends React.Component {
         }
     }
     getStories = async() => {
-        console.log("api call starts");
         const url = `https://hacker-news.firebaseio.com/v0/${this.state.selectedType}stories.json`;
         const storyIds = await fetch(url).then(response => response.json());
         storyIds//.slice(0, 50)
